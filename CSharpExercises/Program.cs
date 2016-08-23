@@ -17,22 +17,22 @@ namespace CSharpExercises
 
             /* Test exercises (Uncomment tests to run them) (Ctrl + K,C to mass comment, Ctrl + K,U to mass uncomment) */
             Assert("HelloWorld() should return \"Hello World!\"", Exercises.HelloWorld() == "Hello World!");
-            //Assert("SayHello(\"John\") should return \"Hello John!\"", Exercises.SayHello("John") == "Hello John!");
-            //Assert("Sum(10,12) should return 22", Exercises.Sum(10, 12) == 22);
-            //Assert("Divide(10,5) should return 2", Exercises.Divide(10, 5) == 2);
-            //Assert("CanOpenCheckingAccount(16) should return false", Exercises.CanOpenCheckingAccount(16) == false);
-            //Assert("CanOpenCheckingAccount(17) should return false", Exercises.CanOpenCheckingAccount(17) == false);
-            //Assert("CanOpenCheckingAccount(18) should return true", Exercises.CanOpenCheckingAccount(18) == true);
-            //Assert("CanOpenCheckingAccount(19) should return true", Exercises.CanOpenCheckingAccount(19) == true);
-            //Assert("GetFirstName(\"John Smith\") should return \"John\"", Exercises.GetFirstName("John Smith") == "John");
-            //Assert("GetFirstName(\"Ann-Marie Simpson\" should return \"Ann-Marie\"", Exercises.GetFirstName("Ann-Marie Simpson") == "Ann-Marie");
-            //Assert("ReverseStringHard() should reverse the string", Exercises.ReverseStringHard(Constants.Quote) == Constants.QuoteReversed);
-            //Assert("ReverseStringEasy() should reverse the string", Exercises.ReverseStringEasy(Constants.Quote) == Constants.QuoteReversed);
-            //Assert("PrintTimesTable(9) should print correctly", Exercises.PrintTimesTable(9) == Constants.TimesTableFor9);
-            //Assert("ConvertKelvinToFahrenheit(300) should return 80.33", Exercises.ConvertKelvinToFahrenheit(300) == 80.33);
-            //Assert("GetAverageHard(new int[] { 10, 20, 30, 40, 50, 60, 80 }) should return 41.428571428571431", Exercises.GetAverageHard(new int[] { 10, 20, 30, 40, 50, 60, 80 }) == 41.428571428571431);
-            //Assert("GetAverageEasy(new int[] { 10, 20, 30, 40, 50, 60, 80 }) should return 41.428571428571431", Exercises.GetAverageEasy(new int[] { 10, 20, 30, 40, 50, 60, 80 }) == 41.428571428571431);
-            //Assert("DrawTriangle(8, 5) should draw correctly", Exercises.DrawTriangle(8, 5) == Constants.TriangleFor8and5);
+            Assert("SayHello(\"John\") should return \"Hello John!\"", Exercises.SayHello("John") == "Hello John!");
+            Assert("Sum(10,12) should return 22", Exercises.Sum(10, 12) == 22);
+            Assert("Divide(10,5) should return 2", Exercises.Divide(10, 5) == 2);
+            Assert("CanOpenCheckingAccount(16) should return false", Exercises.CanOpenCheckingAccount(16) == false);
+            Assert("CanOpenCheckingAccount(17) should return false", Exercises.CanOpenCheckingAccount(17) == false);
+            Assert("CanOpenCheckingAccount(18) should return true", Exercises.CanOpenCheckingAccount(18) == true);
+            Assert("CanOpenCheckingAccount(19) should return true", Exercises.CanOpenCheckingAccount(19) == true);
+            Assert("GetFirstName(\"John Smith\") should return \"John\"", Exercises.GetFirstName("John Smith") == "John");
+            Assert("GetFirstName(\"Ann-Marie Simpson\") should return \"Ann-Marie\"", Exercises.GetFirstName("Ann-Marie Simpson") == "Ann-Marie");
+            Assert("ReverseStringHard() should reverse the string", Exercises.ReverseStringHard(Constants.Quote) == Constants.QuoteReversed);
+            Assert("ReverseStringEasy() should reverse the string", Exercises.ReverseStringEasy(Constants.Quote) == Constants.QuoteReversed);
+            Assert("PrintTimesTable(9) should print correctly", Exercises.PrintTimesTable(9) == Constants.TimesTableFor9);
+            Assert("ConvertKelvinToFahrenheit(300) should return 80.33", Exercises.ConvertKelvinToFahrenheit(300) == 80.33);
+            Assert("GetAverageHard(new int[] { 10, 20, 30, 40, 50, 60, 80 }) should return 41.428571428571431", Exercises.GetAverageHard(new int[] { 10, 20, 30, 40, 50, 60, 80 }) == 41.428571428571431);
+            Assert("GetAverageEasy(new int[] { 10, 20, 30, 40, 50, 60, 80 }) should return 41.428571428571431", Exercises.GetAverageEasy(new int[] { 10, 20, 30, 40, 50, 60, 80 }) == 41.428571428571431);
+            Assert("DrawTriangle(8, 5) should draw correctly", Exercises.DrawTriangle(8, 5) == Constants.TriangleFor8and5);
             //Assert("GetMilesPerHour(200, 2, 30, 45) should return \"80MPH\"", Exercises.GetMilesPerHour(200, 2, 30, 45) == "80MPH");
             //Assert("GetMilesPerHour(200, 2, 29, 0) should return \"81MPH\"", Exercises.GetMilesPerHour(200, 2, 29, 0) == "81MPH");
             //Assert("IsVowel('a') should return true", Exercises.IsVowel('a') == true);
