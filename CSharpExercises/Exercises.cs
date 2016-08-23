@@ -93,8 +93,7 @@ namespace CSharpExercises
         // 9. Create a method called ConvertKelvinToFahrenheit that accepts a double representing a temperature in kelvin and returns a double containing the temperature in Fahrenheit.
         public static double ConvertKelvinToFahrenheit(double kelvin)
         {
-            return kelvin * 9 / 5 - 459.67;
-            // returns 80.329999999 instead of 80.33
+            return Math.Round(kelvin * 9 / 5 - 459.67, 2);
         }
 
         // 10. Create a method called GetAverageHard that accepts an array of integers and returns the average value as a double. (No built in functions allowed)
@@ -139,18 +138,106 @@ namespace CSharpExercises
         }
 
         // 13. Create a method called GetMilesPerHour that accepts a double representing distance and three integers representing hours, minutes and seconds. The method should return the speed in MPH rounded to the nearest whole number as a string. (e.g. "55MPH")
+        public static string GetMilesPerHour(double dist, int h, int m, int s)
+        {
+            // variable to hold total time
+            double hours = 0;
 
+            hours += h;
+            hours += m / 60.0;
+            hours += s / 3600.0;
+
+            double speed = dist / hours;
+            return Math.Round(speed, 0).ToString() + "MPH";
+        }
 
         // 14. Create a method called IsVowel that accepts a char parameter and returns true if the parameter is a vowel or false if the parameter is a consonant.
+        public static bool IsVowel(char letter)
+        {
+            char[] vowels = { 'a', 'e', 'i', 'o', 'u' };
+
+            return Array.IndexOf(vowels, letter) != -1;
+        }
+
         // 15. Create a method called IsConsonant that accepts a char parameter and returns true if the parameter is a consonant or false if the parameter is a vowel.
+        public static bool IsConsonant(char letter)
+        {
+            char[] vowels = { 'a', 'e', 'i', 'o', 'u' };
+
+            return Array.IndexOf(vowels, letter) == -1;
+        }
+
         // 16. The Collatz conjecture, named after Lothar Collatz of Germany, proposed the following conjecture in 1937.
         // Beginning with an integer n > 1, repeat the following until n == 1. If n is even, halve it. If n is odd, triple it and add 1. Following these steps, the function will always arrive at the number 1.
         // Create a method called CollatzConjecture that accepts an integer and returns the number of steps required to get to n == 1 as an integer.
+        public static int CollatzConjecture(int n)
+        {
+            int steps = 0;
+
+            while (n > 1)
+            {
+                if (n % 2 == 0)
+                {
+                    n /= 2;
+                }
+                else
+                {
+                    n = n * 3 + 1;
+                }
+                steps++;
+            }
+
+            // returns 0 if invalid value (n < 1) is passed in
+            return steps;
+        }
+
+        //16.5 Create a method called GetOccurences that accepts two strings.the first string should represent a string of text, and the other should represent a single word.getoccurrences should return the number of times that the given word appears in the string of text.
+        public static int GetOccurences(string text, string word)
+        {
+            //int i = 0;
+            //int count = 0;
+            //while ((i = text.IndexOf(word, i)) != -1)
+            //{
+            //    count++;
+            //    i++;
+            //}
+            //return count;
+
+            string[] arr = new string[] { word };
+            return text.Split(arr, StringSplitOptions.None).Length - 1;
+        }
 
         // 17. Create a method called GetNext7Days that accepts a DateTime object and returns an array of DateTime objects containing the next 7 days (including the given day).
+        public static DateTime[] GetNext7Days(DateTime date)
+        {
+            DateTime[] nextWeek = new DateTime[7];
+
+            for (int i = 0; i < 7; i++)
+            {
+                nextWeek[i] = date.AddDays(i);
+            }
+            
+            return nextWeek;
+        }
+
         // 18. Create a method called IsInLeapYear that accepts a DateTime object and returns true if the date falls within a leap year and false if not. (No built in functions allowed)
+        public static bool IsInLeapYear(DateTime date)
+        {
+            return DateTime.DaysInMonth(date.Year, 2) == 29;
+        }
+
         // 19. Create a method called MortgageCalculator that accepts 2 decimals representing loan balance and interest rate, an integer representing loan term in years, and an integer representing the payment period.
         /* Payment periods: 1 - Monthly, 2 - Bi-Monthly (Every 2 months) */
+        public static decimal MortgageCalculator(decimal balance, decimal rate, int term, int period)
+        {
+            double p = (double) balance;
+            double r = (double) rate / 100 / 12;
+            double n = term * 12/ period;
+
+            decimal result = (decimal)(p * r * Math.Pow((1 + r), n) / (Math.Pow((1 + r), n) - 1));
+            
+            return Math.Round(result, 2);
+        }
 
         // 20. Create a method called DuckGoose that accepts an integer. Iterate from 1 to this integer, building a string along the way.
         // If the current number in the iteration:
@@ -180,6 +267,33 @@ namespace CSharpExercises
          * 19
          * Goose
          */
+         public static string DuckGoose(int num)
+        {
+            StringBuilder builder = new StringBuilder();
+            for (int i = 1; i <= num; i++)
+            {
+                if (i % 15 == 0)
+                {
+                    builder.Append("DuckGoose");
+                }
+                else if (i % 3 == 0)
+                {
+                    builder.Append("Duck");
+                }
+                else if (i % 5 == 0)
+                {
+                    builder.Append("Goose");
+                }
+                else
+                {
+                    builder.Append(i.ToString());
+                }
+                builder.Append(Environment.NewLine);
+            }
+            builder.Remove(builder.Length - 2, 2);
+            return builder.ToString();
+        }
+        
 
         // If you've finished all these challenges, sign up for CodeWars.com and try to complete a few C# challenges there!
     }
